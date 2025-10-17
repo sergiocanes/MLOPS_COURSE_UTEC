@@ -14,3 +14,16 @@ jobs:
 
       - name: Test Model
         run: echo "test model"
+
+  second_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get code
+        uses: actions/checkout@v5
+      - name: setup python
+        uses: actions/setup-python@v6
+        with:
+          python-version: 3.12
+      
+      - name: deploy model azure
+        run: echo "model deployed at azure"
